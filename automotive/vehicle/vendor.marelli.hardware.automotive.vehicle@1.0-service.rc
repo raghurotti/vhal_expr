@@ -1,0 +1,14 @@
+on post-fs-data
+        #create vhal vsomeip dir
+        mkdir /mnt/mnt_share/vsomeip 0777 root root
+        chmod 0777 /mnt/mnt_share/vsomeip
+
+service vendor.hardware.mvhal-service /vendor/bin/hw/vendor.marelli.hardware.automotive.vehicle@1.0-service
+    class hal
+    user root
+    group system inet
+    seclabel u:r:hal_vehicle_marelli:s0
+    setenv VSOMEIP_APPLICATION_NAME client-sample    
+	setenv VSOMEIP_BASE_PATH /mnt/mnt_share/vsomeip/
+    setenv TREBLE_TESTING_OVERRIDE true 
+

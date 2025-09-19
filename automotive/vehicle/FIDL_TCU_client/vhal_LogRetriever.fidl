@@ -1,0 +1,144 @@
+package VHAL.LOGR
+
+interface LOGR_VHALInterface 
+{
+    version { major 1 minor 0 }
+
+    /**
+    @description: retrieve logs from Log database
+    Returns a path to the generated file
+    */
+    method retrieve {
+        in {
+                LOGR_Types.LOGR_verbosity verbosity
+                LOGR_Types.LOGR_source[] sources
+                LOGR_Types.t_time_UTC starttime
+                LOGR_Types.t_time_UTC endtime
+        }
+        out {
+		/* Status=OK if the request can be processed, an error code otherwise */
+                LOGR_Types.LOGR_status     status
+            }
+    }
+
+    /**
+    @description: free the generated file
+            Must be done when the file is consumed by the client.
+            Otherwise, it will be deleted after seven days
+    */
+    method free {
+	in {
+		String 	 file_path
+	}
+        out {
+                LOGR_Types.LOGR_status     status
+            }
+    }
+
+    /**
+    @description: get current status from the log retrieval task
+    */
+    method status {
+        out {
+                LOGR_Types.LOGR_status     status
+            }
+    }
+
+    /**
+    @description: 
+        if a task already ongoing, cancels logs retrieval from Log database
+        if no task ongoing, doe snothing and returns status=OK
+    */
+    method cancel {
+        out {
+                LOGR_Types.LOGR_status     status
+            }
+    }
+
+    /**
+     * Event: request finished
+     * Commentary : notifies that a retrieve() method request is finished, with status "status". 
+	If the status is "OK", then the path to the generated archive is in "file_path"
+     */
+    broadcast request_finished {
+    	out {
+                LOGR_Types.LOGR_status     status
+
+                /** if status = OK, file_path points to the rersult Log file */
+                /** if status != OK, empty string */
+                String          file_path
+	}
+    }
+
+    method system_timezone_offset{
+		in {Int32 timezone}
+	}
+
+    
+
+}
+
+typeCollection LOGR_Types {
+    enumeration LOGR_verbosity {
+            All = 0
+            Verbose = 1
+            Debug = 2
+            Info = 3
+            Warning = 4
+            Error = 5
+            Assert = 6
+            Notice = 7
+            Critical = 8
+    }
+
+    enumeration LOGR_source {
+            All = 0
+            Logcat = 1
+            Kernel_Logs = 2
+            Event_Logs = 3
+            Radio_Logs = 4
+            Crash_Reports = 5
+            Security_Logs = 6
+            Audit_Logs = 7
+            FOTA_VDM = 8
+            STLA_Logs = 9
+            IDS = 10
+    }
+
+    enumeration LOGR_status {
+        /** job done */
+        OK = 0
+
+        /** job not done, reason: task already ongoing */
+        ERROR_TASK_ONGOING = 1
+
+        /** job not done, reason: ecall started */
+        ERROR_ECALL = 2
+
+        /** job not done, reason: system is shutting down */
+        ERROR_SYS_SHUTDOWN = 3
+
+        /** job not done, reason: request interrupted by requester */
+        ERROR_CANCELLED = 4
+	
+        /** job not started, reason: some request parameters are invalid */
+	ERROR_INVALID_REQUEST = 5
+
+        /** job not done, reason: internal, see logs */
+        ERROR_INTERNAL = 255
+
+    }
+
+        /**
+         * time_UTC type
+         */
+        struct t_time_UTC {
+                UInt16 year
+                UInt16 month
+                UInt16 day
+                UInt16 hours
+                UInt16 minutes
+                UInt16 seconds
+        }
+
+}

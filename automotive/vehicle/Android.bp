@@ -1,0 +1,179 @@
+cc_library_shared {
+    name: "CAPIVehicleClientGateway",
+    local_include_dirs: [
+        "fidl/src-gen",
+        "include/lib",
+	"FIDL_TCU/src-gen",
+        "FIDL_TCU_client/src-gen",
+
+    ],
+	
+	header_libs: ["libids_client_headers","libids_manager_headers","libids_common", "vendor.securethings.hardware.ids.ids_client@1.0-exported-headers", "vendor.securethings.hardware.ids.ids_manager@1.0-exported-headers"],
+
+    export_header_lib_headers: ["libids_client_headers","libids_manager_headers","libids_common","vendor.securethings.hardware.ids.ids_client@1.0-exported-headers", "vendor.securethings.hardware.ids.ids_manager@1.0-exported-headers"],
+    vendor: true,
+    rtti: true,
+    defaults: [
+        "libCommonAPI-SomeIP_defaults",
+          "vhal_v2_0_defaults",
+    ],
+    srcs: [
+        "src/lib/CAPIVehicleClientGateway.cpp",
+		"fidl/src-gen/v0/iMicro/SOC_LIFECYCLESomeIPDeployment.cpp",
+		"fidl/src-gen/v0/iMicro/SOC_LIFECYCLESomeIPProxy.cpp",
+        "fidl/src-gen/v0/iMicro/SOC_Channel_CANSomeIPProxy.cpp",
+		"fidl/src-gen/v0/iMicro/SOC_Channel_DIAGSomeIPProxy.cpp",
+		"fidl/src-gen/v0/iMicro/SOC_Channel_CALIBSomeIPProxy.cpp",
+		"fidl/src-gen/v0/iMicro/SOC_IMUSomeIPProxy.cpp",
+		"fidl/src-gen/v0/iMicro/SOC_DIAGSomeIPProxy.cpp",
+		"fidl/src-gen/v0/iMicro/SOC_DEMSomeIPProxy.cpp",
+        "fidl/src-gen/v0/iMicro/SOC_FIRSTSomeIPProxy.cpp",
+		"src/lib/tcuStubImpl.cpp",
+		"FIDL_TCU/src-gen/v0/VHAL/VHAL_LIFECYCLESomeIPStubAdapter.cpp",
+        "FIDL_TCU_client/src-gen/v1/VHAL/LOGR/LOGR_VHALInterfaceSomeIPProxy.cpp",
+        "FIDL_TCU_client/src-gen/v1/VHAL/LOGR/LOGR_VHALInterfaceSomeIPStubAdapter.cpp",
+        "FIDL_TCU_client/src-gen/v1/VHAL/LOGR/LOGR_VHALInterfaceSomeIPDeployment.cpp",
+        "FIDL_TCU_client/src-gen/VHAL/LOGR/LOGR_TypesSomeIPDeployment.cpp",
+		"FIDL_TCU/src-gen/VHAL/sIdsFramework_TypesSomeIPDeployment.cpp",
+        
+
+		
+    ],
+	
+	cflags: [
+	"-fexceptions",
+    "-pthread",
+	"-Wno-error",
+    "-Wno-unused-const-variable",
+	"-Wno-unused-private-field",
+    ],
+
+    shared_libs: [
+        "libbase",
+        "libutils",
+        "liblog",
+        "libCommonAPI",
+        "libCommonAPI-SomeIP",
+		"libcutils",
+        "libhidlbase",
+        "libexpat",
+		"libhwbinder",
+        "vendor.securethings.hardware.ids.ids_client@1.0",
+        "vendor.securethings.hardware.ids.ids_manager@1.0",
+
+    ],
+
+}
+
+
+runtime_required = [
+    "vehicle-commonapi.ini",
+    "vehicle-vsomeip.json",
+]
+
+
+cc_binary {
+    name: "vendor.marelli.hardware.automotive.vehicle@1.0-service",
+    overrides: ["android.hardware.automotive.vehicle@2.0-service"],
+    local_include_dirs: [
+        "include/lib",
+        "impl/src",
+
+    ],
+	
+    vintf_fragments: [
+        "vendor.marelli.hardware.automotive.vehicle@1.0-service.xml",
+    ],
+    vendor: true,
+    defaults: ["vhal_v2_0_defaults"],
+    relative_install_path: "hw",
+    init_rc: ["vendor.marelli.hardware.automotive.vehicle@1.0-service.rc"],
+    srcs: [
+        "impl/**/*.cpp",
+		
+    ],
+	
+    shared_libs: [
+        "libbase",
+        "libutils",
+        "liblog",
+        "CAPIVehicleClientGateway",
+        "MarelliLVDS",
+        "android.hardware.automotive.vehicle@2.0",
+        "android.hardware.automotive.vehicle@2.0-manager-lib",
+        "vendor.marelli.hardware.automotive.vehicle@1.0",
+		"libCommonAPI",
+        "libCommonAPI-SomeIP",
+        "libdlt",
+    ],
+    required: runtime_required,
+
+}
+
+/*
+cc_library_shared {
+    name: "CAPIVehicleServer",
+    local_include_dirs: [
+        "fidl/src-gen",
+		"FIDL_TCU/src-gen",
+        "test",
+    ],
+    vendor: true,
+    rtti: true,
+    cppflags: ["-Wno-unused-parameter"],
+    defaults: [
+        "libCommonAPI-SomeIP_defaults",
+    ],
+    srcs: [
+        "test/CAPISOC_FIRSTStubImpl.cpp",
+        "fidl/src-gen/v0/com/marelli/vehicleSomeIPDeployment.cpp",
+        "fidl/src-gen/v0/com/marelli/vehicleSomeIPStubAdapter.cpp",
+        "fidl/src-gen/v0/com/marelli/vehicleStub.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libutils",
+        "liblog",
+        "libCommonAPI",
+        "libCommonAPI-SomeIP",
+    ],
+
+}
+
+cc_binary {
+    name: "test-someip-service",
+    local_include_dirs: [
+        "fidl/src-gen",
+        "test",
+    ],
+    vendor: true,
+    srcs: [
+        "test/CAPIVehicleSimulator.cpp",
+    ],
+    shared_libs: [
+        "libbase",
+        "libutils",
+        "liblog",
+        "CAPIVehicleServer",
+        "libCommonAPI",
+
+    ],
+    required: runtime_required,
+}*/
+
+prebuilt_etc {
+    name: "vehicle-commonapi.ini",
+    vendor: true,
+    //sub_dir: "genivi-capi-someip-examples",
+    src: "config/commonapi4someip.ini",
+    filename: "commonapi.ini",
+}
+
+prebuilt_etc {
+    name: "vehicle-vsomeip.json",
+    vendor: true,
+    //sub_dir: "genivi-capi-someip-examples",
+    src: "config/vsomeip-local.json",
+    filename: "vsomeip.json",
+}
+

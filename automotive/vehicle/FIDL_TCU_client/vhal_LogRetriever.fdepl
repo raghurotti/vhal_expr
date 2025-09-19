@@ -1,0 +1,64 @@
+/* Copyright (C) 2015 Bayerische Motoren Werke Aktiengesellschaft (BMW AG)
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
+import "vhal_LogRetriever.fidl"
+
+define org.genivi.commonapi.someip.deployment for interface VHAL.LOGR.LOGR_VHALInterface  {
+    SomeIpServiceID = 6660
+
+    method retrieve {
+        SomeIpMethodID = 83
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+	
+    method free {
+        SomeIpMethodID = 84
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method status {
+        SomeIpMethodID = 85
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method cancel {
+        SomeIpMethodID = 86
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+   
+    broadcast request_finished {
+        SomeIpEventID = 34000 
+        SomeIpEventGroups = { 34000 }
+        out {
+        }
+    }
+
+    method system_timezone_offset {
+        SomeIpMethodID = 87
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+}
+
+define org.genivi.commonapi.someip.deployment for provider as Service {
+    instance VHAL.LOGR.LOGR_VHALInterface {
+        InstanceId = "VHAL.LOGR.LOGR_VHALInterface"
+        SomeIpInstanceID = 42136
+        SomeIpUnicastAddress = "192.168.1.10"
+        SomeIpUnreliableMulticastPort = 30490
+    }
+}

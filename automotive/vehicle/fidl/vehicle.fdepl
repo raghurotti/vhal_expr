@@ -1,0 +1,352 @@
+/* Copyright (C) 2015 Bayerische Motoren Werke Aktiengesellschaft (BMW AG)
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
+import "vehicle.fidl"
+
+define org.genivi.commonapi.someip.deployment for interface com.marelli.vehicle {
+    SomeIpServiceID = 4660
+	attribute Speed {
+		SomeIpGetterID = 21
+		SomeIpSetterID = 101
+		SomeIpNotifierID = 49153
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+	}
+	
+  attribute TankCapacity {
+		SomeIpGetterID = 22
+		SomeIpSetterID = 102
+		SomeIpNotifierID = 49154
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+	}
+	
+   attribute GearSelection {
+		SomeIpGetterID = 23
+		SomeIpSetterID = 103
+		SomeIpNotifierID = 49669
+		SomeIpNotifierEventGroups = { 16386 }
+		SomeIpAttributeReliable = false
+	}
+	
+	
+  attribute TT_ABS {
+		SomeIpGetterID = 25
+		SomeIpSetterID = 104
+		SomeIpNotifierID = 50185
+		SomeIpNotifierEventGroups = { 16388 }
+		SomeIpAttributeReliable = false
+	}
+	
+  attribute TT_Parking_Brake {
+		SomeIpGetterID = 29
+		SomeIpSetterID = 105
+		SomeIpNotifierID = 51479
+		SomeIpNotifierEventGroups = { 39168 }
+		SomeIpAttributeReliable = false
+	}
+	
+   attribute TT_Speed_Limiter_Active {
+		SomeIpGetterID = 30
+		SomeIpSetterID = 106
+		SomeIpNotifierID = 51481
+		SomeIpNotifierEventGroups = { 39168 }
+		SomeIpAttributeReliable = false
+	}
+	
+
+   attribute FuelConsumption {
+		SomeIpGetterID = 32
+		SomeIpSetterID = 107
+		SomeIpNotifierID = 50178
+		SomeIpNotifierEventGroups = { 16388 }
+		SomeIpAttributeReliable = false
+	}
+
+  attribute Temperature_Value {
+		SomeIpGetterID = 47
+		SomeIpSetterID = 108
+		SomeIpNotifierID = 49668
+		SomeIpNotifierEventGroups = { 16386 }
+		SomeIpAttributeReliable = false
+	}
+	
+/*  attribute Tire_Pressure {
+		SomeIpGetterID = 51
+		SomeIpNotifierID = 51489
+		SomeIpNotifierEventGroups = { 39168 }
+		SomeIpAttributeReliable = false
+	}
+*/
+	
+  attribute VIN {
+		SomeIpGetterID = 5
+		SomeIpSetterID = 109
+		SomeIpNotifierID = 49768
+		SomeIpNotifierEventGroups = { 16385  }
+		SomeIpAttributeReliable = false
+	}
+ /* -----phase 2----------------------------------------------- */
+  attribute PERF_ODOMETER {
+		SomeIpGetterID = 35
+		SomeIpSetterID = 110
+		SomeIpNotifierID = 49671
+		SomeIpNotifierEventGroups = { 16386  }
+		SomeIpAttributeReliable = false
+	}
+  attribute VehicleTurnSignalLeft {
+		SomeIpGetterID = 36
+		SomeIpSetterID = 111
+		SomeIpNotifierID = 51490
+		SomeIpNotifierEventGroups = { 39168  }
+		SomeIpAttributeReliable = false
+	}
+	
+  attribute VehicleTurnSignalRight {
+		SomeIpGetterID = 37
+		SomeIpSetterID = 112
+		SomeIpNotifierID = 51491
+		SomeIpNotifierEventGroups = { 39168  }
+		SomeIpAttributeReliable = false
+	}
+  attribute FOG_LIGHTS_STATE {
+		SomeIpGetterID = 40
+		SomeIpSetterID = 113
+		SomeIpNotifierID = 51473
+		SomeIpNotifierEventGroups = { 39168  }
+		SomeIpAttributeReliable = false
+	}
+  attribute HIGH_BEAM_LIGHTS_STATE {
+		SomeIpGetterID = 41
+		SomeIpSetterID = 114
+		SomeIpNotifierID = 51475
+		SomeIpNotifierEventGroups = { 39168  }
+		SomeIpAttributeReliable = false
+	}
+/* attribute DOOR_POS {
+		SomeIpGetterID = 43
+		SomeIpNotifierID = 49922
+		SomeIpNotifierEventGroups = { 16387 }
+		SomeIpAttributeReliable = false
+	}
+ */
+ attribute CABIN_LIGHTS_STATE {
+		SomeIpGetterID = 56
+		SomeIpSetterID = 115
+		SomeIpNotifierID = 51493
+		SomeIpNotifierEventGroups = { 39184  }
+		SomeIpAttributeReliable = false
+	}
+	
+/*---------------------Phase 3 -------------------------*/
+
+
+ attribute ReverseGearSts {
+		SomeIpGetterID = 24
+		SomeIpSetterID = 116
+		SomeIpNotifierID = 49670
+		SomeIpNotifierEventGroups = {  16386 }
+		SomeIpAttributeReliable = false
+	}
+ attribute TT_AirBag {
+		SomeIpGetterID = 26
+		SomeIpSetterID = 117
+		SomeIpNotifierID = 51457
+		SomeIpNotifierEventGroups = {  39168 }
+		SomeIpAttributeReliable = false
+	}
+ attribute BrakeFluidLevelSts {
+		SomeIpGetterID = 27
+		SomeIpSetterID = 118
+		SomeIpNotifierID = 51460
+		SomeIpNotifierEventGroups = {39168}
+		SomeIpAttributeReliable = false
+	}
+ attribute TT_ESC_OFF {
+		SomeIpGetterID = 28
+		SomeIpSetterID = 119
+		SomeIpNotifierID = 51472
+		SomeIpNotifierEventGroups = { 39168  }
+		SomeIpAttributeReliable = false
+	}
+ attribute TC_Trip {
+		SomeIpGetterID = 31
+		SomeIpSetterID = 120
+		SomeIpNotifierID = 50177
+		SomeIpNotifierEventGroups = { 16388  }
+		SomeIpAttributeReliable = false
+	}
+ attribute RTE_Num {
+		SomeIpGetterID = 34
+		SomeIpSetterID = 121
+		SomeIpNotifierID = 49155
+		SomeIpNotifierEventGroups = {16385 }
+		SomeIpAttributeReliable = false
+	}
+ attribute TC_AVG_Speed {
+		SomeIpGetterID = 33
+		SomeIpSetterID = 122
+		SomeIpNotifierID = 50179
+		SomeIpNotifierEventGroups = {16388 }
+		SomeIpAttributeReliable = false
+	}
+ attribute TT_Back_Fog_Light {
+		SomeIpGetterID = 39
+		SomeIpSetterID = 123
+		SomeIpNotifierID = 51459
+		SomeIpNotifierEventGroups = {39168 }
+		SomeIpAttributeReliable = false
+	}
+ attribute TT_Low_Beam {
+		SomeIpGetterID = 42
+		SomeIpSetterID = 141
+		SomeIpNotifierID = 51476
+		SomeIpNotifierEventGroups = {39168 }
+		SomeIpAttributeReliable = false
+	}
+ attribute DoorOpen_FL {
+		SomeIpGetterID = 43
+		SomeIpSetterID = 124
+		SomeIpNotifierID = 49922
+		SomeIpNotifierEventGroups = { 16387 }
+		SomeIpAttributeReliable = false
+	}
+ attribute DoorOpen_FR {
+		SomeIpGetterID = 44
+		SomeIpSetterID = 125
+		SomeIpNotifierID = 49923
+		SomeIpNotifierEventGroups = { 16387 }
+		SomeIpAttributeReliable = false
+	}
+ attribute DoorOpen_RL {
+		SomeIpGetterID = 45
+		SomeIpSetterID = 126
+		SomeIpNotifierID = 49924
+		SomeIpNotifierEventGroups = { 16387 }
+		SomeIpAttributeReliable = false
+	}
+ attribute DoorOpen_RR {
+		SomeIpGetterID = 46
+		SomeIpSetterID = 127
+		SomeIpNotifierID = 49925
+		SomeIpNotifierEventGroups = { 16387 }
+		SomeIpAttributeReliable = false
+	}
+ attribute ExternalTemperatureF {
+		SomeIpGetterID = 48
+		SomeIpSetterID = 128
+		SomeIpNotifierID = 49672
+		SomeIpNotifierEventGroups = {  16386 }
+		SomeIpAttributeReliable = false
+	}
+ attribute LatAcceleration_BSM {
+		SomeIpGetterID = 49
+		SomeIpSetterID = 129
+		SomeIpNotifierID = 50183
+		SomeIpNotifierEventGroups = { 16388  }
+		SomeIpAttributeReliable = false
+	}
+ attribute LongAcceleration_BSM {
+		SomeIpGetterID = 50
+		SomeIpSetterID = 130
+		SomeIpNotifierID = 50184
+		SomeIpNotifierEventGroups = {  16388 }
+		SomeIpAttributeReliable = false
+	}
+ attribute InflationState_LHF_Tyre {
+		SomeIpGetterID = 51
+		SomeIpSetterID = 131
+		SomeIpNotifierID = 51489
+		SomeIpNotifierEventGroups = { 39168  }
+		SomeIpAttributeReliable = false
+	}
+ attribute InflationState_RHF_Tyre {
+		SomeIpGetterID = 52
+		SomeIpSetterID = 132
+		SomeIpNotifierID = 51495
+		SomeIpNotifierEventGroups = { 39168 }
+		SomeIpAttributeReliable = false
+	}
+ attribute InflationState_LHR_Tyre {
+		SomeIpGetterID = 53
+		SomeIpSetterID = 133
+		SomeIpNotifierID = 51496
+		SomeIpNotifierEventGroups = { 39168 }
+		SomeIpAttributeReliable = false
+	}
+ attribute InflationState_RHR_Tyre {
+		SomeIpGetterID = 54
+		SomeIpSetterID = 134
+		SomeIpNotifierID = 51497
+		SomeIpNotifierEventGroups = { 39168 }
+		SomeIpAttributeReliable = false
+	}
+ attribute TyrePressureSystemFailSts {
+		SomeIpGetterID = 55
+		SomeIpSetterID = 135
+		SomeIpNotifierID = 51504
+		SomeIpNotifierEventGroups = {  39168 }
+		SomeIpAttributeReliable = false
+	}
+ attribute AmbientLightingLevel {
+		SomeIpGetterID = 57
+		SomeIpSetterID = 136
+		SomeIpNotifierID = 51494
+		SomeIpNotifierEventGroups = {  39184 }
+		SomeIpAttributeReliable = false
+	}
+	
+ attribute TT_Auto_High_Beam {
+		SomeIpGetterID = 38
+		SomeIpSetterID = 137
+		SomeIpNotifierID = 51458
+		SomeIpNotifierEventGroups = {  39184 }
+		SomeIpAttributeReliable = false
+	}
+ attribute GPS_POS1_Lat {
+		SomeIpGetterID = 58
+		SomeIpSetterID = 138
+		SomeIpNotifierID = 51505
+		SomeIpNotifierEventGroups = {  39184 }
+		SomeIpAttributeReliable = false
+	}
+ attribute GPS_POS1_Long {
+		SomeIpGetterID = 59
+		SomeIpSetterID = 139
+		SomeIpNotifierID = 51506
+		SomeIpNotifierEventGroups = {  39184 }
+		SomeIpAttributeReliable = false
+	}
+ attribute CANRAWMessageNotification {
+		SomeIpGetterID = 70
+		SomeIpSetterID = 140
+		SomeIpNotifierID = 51508
+		SomeIpNotifierEventGroups = {  4369 }
+		SomeIpAttributeReliable = false
+	}
+
+ attribute PowerMode {
+        SomeIpGetterID = 4000
+        SomeIpSetterID = 4001
+        SomeIpNotifierID = 44010
+        SomeIpNotifierEventGroups = { 44010 }
+        SomeIpAttributeReliable = true
+    }
+}
+
+define org.genivi.commonapi.someip.deployment for provider as Service {
+    instance com.marelli.vehicle {
+        InstanceId = "com.marelli.vehicle"
+
+        SomeIpInstanceID = 22136
+
+        SomeIpUnicastAddress = "192.168.1.10"
+        SomeIpUnreliableMulticastPort = 30490
+    }
+}
+
+
+

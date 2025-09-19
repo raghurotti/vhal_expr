@@ -1,0 +1,76 @@
+package com.marelli
+
+
+interface vehicle {
+
+ version {major 0 minor 3}
+
+    /*-------  SOC receives from VuC -----*/
+
+    attribute Int64 Speed 
+    
+    attribute Int64 TT_Speed_Limiter_Active 
+
+    attribute UInt64 TankCapacity 
+
+    attribute UInt64 FuelConsumption 
+    
+    /*-------  SOC receives from VuC -----*/
+
+    attribute UInt8[] VIN 
+	
+	/*attribute Float ENV_OUTSIDE_TEMPERATURE*/
+	
+	attribute Float Temperature_Value 
+	attribute Int32 GearSelection 
+	attribute Boolean TT_ABS  
+	attribute Boolean TT_Parking_Brake 
+	//attribute Float Tire_Pressure 
+	
+	/*------Phase2---------------------*/
+	attribute Float PERF_ODOMETER 
+	attribute Int32 VehicleTurnSignalLeft 
+	attribute Int32 VehicleTurnSignalRight 
+	attribute Int32 FOG_LIGHTS_STATE 
+	attribute Int32 HIGH_BEAM_LIGHTS_STATE 
+	//attribute Int32 DOOR_POS 
+	attribute Int32 CABIN_LIGHTS_STATE 
+	
+	/*------------------Phase3-----------------*/
+	
+	
+	attribute UInt8 ReverseGearSts 
+	attribute UInt8 TT_AirBag 
+	attribute UInt8 BrakeFluidLevelSts 
+	attribute UInt8 TT_ESC_OFF 
+	attribute UInt32 TC_Trip 
+	attribute UInt16 RTE_Num 
+	attribute UInt8 TC_AVG_Speed 
+	attribute UInt8 TT_Back_Fog_Light 
+	attribute UInt8 TT_Low_Beam 
+	attribute UInt8 DoorOpen_FL 
+	attribute UInt8 DoorOpen_FR 
+	attribute UInt8 DoorOpen_RL 
+	attribute UInt8 DoorOpen_RR 
+	attribute UInt16 ExternalTemperatureF 
+	attribute UInt16 LatAcceleration_BSM 
+	attribute UInt16 LongAcceleration_BSM 
+	attribute UInt16 InflationState_LHF_Tyre 
+	attribute UInt8 InflationState_RHF_Tyre 
+	attribute UInt8 InflationState_LHR_Tyre 
+	attribute UInt8 InflationState_RHR_Tyre 
+	attribute UInt8 TyrePressureSystemFailSts 
+	attribute UInt8 AmbientLightingLevel 
+	
+	attribute UInt8 TT_Auto_High_Beam 
+	attribute UInt32 GPS_POS1_Lat 
+	attribute UInt32 GPS_POS1_Long 
+	attribute UInt32 CANRAWMessageNotification 
+	
+	attribute Int32 PowerMode
+	
+}
+
+
+
+

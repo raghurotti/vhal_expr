@@ -1,0 +1,555 @@
+/* Copyright (C) 2015 Bayerische Motoren Werke Aktiengesellschaft (BMW AG)
+ * This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this
+ * file, You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
+import "vhal_interface.fidl"
+
+define org.genivi.commonapi.someip.deployment for interface VHAL.VHAL_LIFECYCLE  {
+    SomeIpServiceID = 5660
+
+	attribute ecallStatus {
+		SomeIpGetterID = 21
+		//SomeIpSetterID = 101
+		SomeIpNotifierID = 49151
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+	}
+
+    method ecallStatus_ack{
+        SomeIpMethodID = 83
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+	
+    method Receive_MsdTransmissionTime_TCU{
+        SomeIpMethodID = 84
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_EcallState_TCU{
+        SomeIpMethodID = 85
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_AcallState_TCU{
+        SomeIpMethodID = 86
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_UserXcallFeedback_TCU{
+        SomeIpMethodID = 87
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_EcallDurationTimer_TCU{
+        SomeIpMethodID = 88
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_EcallTpsState_TCU{
+        SomeIpMethodID = 89
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_XcallStatus_TCU{
+        SomeIpMethodID = 90
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_EcallWcbTimer_TCU{
+        SomeIpMethodID = 91
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+     method Receive_DmdMuteSual{
+        SomeIpMethodID = 92
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_AppUrgMds{
+        SomeIpMethodID = 93
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_SignalVoyantDysfunction{
+        SomeIpMethodID = 94
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_SignalVoyantEtat{
+        SomeIpMethodID = 95
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_BoostrapRetryCount{
+        SomeIpMethodID = 96
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_CloudConnectionStatus_CConnState_connectionGateID{
+        SomeIpMethodID = 97
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_CloudConnectionStatus_CConnState_isConnected{
+        SomeIpMethodID = 98
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_CloudConnectionStatus_CConnState_connType{
+        SomeIpMethodID = 99
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_CloudConnectionStatus_CConnState_isRoaming{
+        SomeIpMethodID = 100
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_CloudConnectionStatus_CConnState_sigStrength{
+        SomeIpMethodID = 101
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_CloudConnectionStatus_CConnState_ipVersion{
+        SomeIpMethodID = 102
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_CellularNetworkType{
+        SomeIpMethodID = 103
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_NetConnection{
+        SomeIpMethodID = 104
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_Cellsignal{
+        SomeIpMethodID = 105
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method Receive_CloudConnectionStatus_CConnCtrl_reqDisable{
+        SomeIpMethodID = 106
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    broadcast send_UserXCallInput_TCU {
+        SomeIpEventID = 34000 
+        SomeIpEventGroups = { 34000 }
+        out {
+        }
+    }
+
+    broadcast send_Language_selection {
+        SomeIpEventID = 34001 
+        SomeIpEventGroups = { 34001 }
+        out {
+        }
+    }
+    
+    method getLanguageSelectionOnBootup{
+        SomeIpMethodID = 107
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    attribute Privacy_Mode {
+		SomeIpGetterID = 25
+		//SomeIpSetterID = 105
+		SomeIpNotifierID = 49155
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+	}
+
+    method Receive_SLIRoadType{
+        SomeIpMethodID = 108
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+ 
+    method Receive_SLISpeedLimit{
+        SomeIpMethodID = 109
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+ 
+    method Receive_SLICountryCode{
+        SomeIpMethodID = 110
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    attribute XCallHmiControl {
+		SomeIpGetterID = 26
+		//SomeIpSetterID = 106
+		SomeIpNotifierID = 49156
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+	}
+
+    method sIdsRegisterApp{
+        SomeIpMethodID = 420
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+ 
+    method sIdsUnRegisterApp{
+        SomeIpMethodID = 421
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+ 
+    method sIdsWriteSev{
+        SomeIpMethodID = 422
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+	
+    method Flash_Unitid{
+        SomeIpMethodID = 114
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }	
+	attribute Flash_Result {
+		SomeIpGetterID = 28
+		//SomeIpSetterID = 108
+		SomeIpNotifierID = 49158
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+	}
+
+    method Package_Path{
+        SomeIpMethodID = 116
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }	
+
+
+	method ReceiveFOTA_Check_for_Updates_Result{
+        SomeIpMethodID = 112
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+	method ReceiveFOTA_Update_Available{
+        SomeIpMethodID = 113
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+    method ReceiveFOTA_Conditions_not_Met{
+        SomeIpMethodID = 117
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+    method ReceiveFOTA_Installation_Status{
+        SomeIpMethodID = 118
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+    
+    attribute FOTA_Installation_Finished_with_User_Conformation{
+        SomeIpGetterID = 29
+		//SomeIpSetterID = 109
+		SomeIpNotifierID = 49159
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+    }
+    attribute FOTA_Start_Installation{
+        SomeIpGetterID = 30
+		//SomeIpSetterID = 110
+		SomeIpNotifierID = 49160
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+    }
+    attribute FOTA_Check_for_Updates{
+         SomeIpGetterID = 31
+		//SomeIpSetterID = 111
+		SomeIpNotifierID = 49161
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+    }
+    attribute HMI_FOTA_Update_history{
+        SomeIpGetterID = 33
+		//SomeIpSetterID = 113
+		SomeIpNotifierID = 49163
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+    }
+    attribute HMI_FOTA_pending_updates{
+        SomeIpGetterID = 34
+		//SomeIpSetterID = 114
+		SomeIpNotifierID = 49164
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+    }
+
+    attribute active_phone_call{
+        SomeIpGetterID = 35
+		//SomeIpSetterID = 115
+		SomeIpNotifierID = 49165
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+    }
+
+    attribute SIVIDriverLockoutSts{
+        SomeIpGetterID = 36
+		//SomeIpSetterID = 116
+		SomeIpNotifierID = 49166
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+    }
+
+    method Receive_UIN_TCU{
+        SomeIpMethodID = 124
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    attribute BTCallHMI_Status{
+        SomeIpGetterID = 37
+		//SomeIpSetterID = 117
+		SomeIpNotifierID = 49167
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+    }
+
+    attribute BTDeviceAttached_Status{
+        SomeIpGetterID = 38
+		//SomeIpSetterID = 118
+		SomeIpNotifierID = 49168
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+    }
+
+    attribute BTTransferTime_Duration{
+        SomeIpGetterID = 39
+		//SomeIpSetterID = 119
+		SomeIpNotifierID = 49169
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false 
+    }
+
+    attribute FOTA_WhatsNew_Details{
+        SomeIpGetterID = 40
+		//SomeIpSetterID = 120
+		SomeIpNotifierID = 49170
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false 
+    }
+
+    attribute FOTA_Update_Dismissed{
+        SomeIpGetterID = 41
+		//SomeIpSetterID = 121
+		SomeIpNotifierID = 49171
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false 
+    }
+
+    attribute FOTA_Schedule_Update{
+        SomeIpGetterID = 42
+		//SomeIpSetterID = 122
+		SomeIpNotifierID = 49172
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false 
+    }
+
+    method ReceiveFOTA_Update_Finished{
+        SomeIpMethodID = 125
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method ReceiveFOTASchedule_Update_Response{
+        SomeIpMethodID = 126
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method ReceiveFOTAWhatsNew_Details_Response{
+        SomeIpMethodID = 127
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method ReceiveFOTAUpdate_History_Response{
+        SomeIpMethodID = 129
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method ReceiveFOTAPending_Updates_Response{
+        SomeIpMethodID = 130
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    method ReceiveTCU_Version_Number{
+        SomeIpMethodID = 131
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    attribute UIN_Trigger_from_HMI{
+        SomeIpGetterID = 43
+		//SomeIpSetterID = 123
+		SomeIpNotifierID = 49173
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false 
+    }
+
+    method ReceiveAOSP_RBUA_Trigger{
+        SomeIpMethodID = 132
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+
+    attribute AOSP_Flash_Result{
+        SomeIpGetterID = 45
+		//SomeIpSetterID = 125
+		SomeIpNotifierID = 49175
+		SomeIpNotifierEventGroups = { 16385 }
+		SomeIpAttributeReliable = false
+    }
+    
+     method sIdsExportSecurityEvents{
+        SomeIpMethodID = 423
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+    method sIdsSetVehiclePhase{
+        SomeIpMethodID = 424
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+    
+    attribute HMI_Status_SWUpdate{
+    	SomeIpGetterID = 46
+	//SomeIpSetterID = 126
+	SomeIpNotifierID = 49176
+	SomeIpNotifierEventGroups = { 16385 }
+	SomeIpAttributeReliable = false
+    }
+    attribute IncomingPhoneCall{
+    	SomeIpGetterID = 47
+	//SomeIpSetterID = 127
+	SomeIpNotifierID = 49177
+	SomeIpNotifierEventGroups = { 16385 }
+	SomeIpAttributeReliable = false
+    }
+    attribute OutgoingPhoneCall{
+    	SomeIpGetterID = 48
+	//SomeIpSetterID = 128
+	SomeIpNotifierID = 49178
+	SomeIpNotifierEventGroups = { 16385 }
+	SomeIpAttributeReliable = false
+    }
+    attribute BtTransferAcceptance{
+    	SomeIpGetterID = 49
+	//SomeIpSetterID = 129
+	SomeIpNotifierID = 49179
+	SomeIpNotifierEventGroups = { 16385 }
+	SomeIpAttributeReliable = false
+    }
+    attribute HMIFOTA_Info{
+    	SomeIpGetterID = 50
+	//SomeIpSetterID = 130
+	SomeIpNotifierID = 49180
+	SomeIpNotifierEventGroups = { 16385 }
+	SomeIpAttributeReliable = false
+    }
+    method FOTAHMI_Info_Result{
+        SomeIpMethodID = 133
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+    method USBUpdate_Details{
+        SomeIpMethodID = 134
+        SomeIpReliable = false
+        SomeIpMethodMaxRetentionTime = 5
+        SomeIpMethodRequestDebounceTime = 100
+    }
+ 
+}
+
+define org.genivi.commonapi.someip.deployment for provider as Service {
+    instance VHAL.VHAL_LIFECYCLE {
+        InstanceId = "VHAL.VHAL_LIFECYCLE"
+        SomeIpInstanceID = 32136
+        SomeIpUnicastAddress = "192.168.1.10"
+        SomeIpUnreliableMulticastPort = 30490
+    }
+}

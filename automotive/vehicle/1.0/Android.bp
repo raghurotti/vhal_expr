@@ -1,0 +1,22 @@
+hidl_package_root {
+    name: "vendor.marelli.hardware.automotive.vehicle",
+    path: "vendor/marelli/interfaces/automotive/vehicle",
+}
+
+hidl_interface {
+    name: "vendor.marelli.hardware.automotive.vehicle@1.0",
+    root: "vendor.marelli.hardware.automotive.vehicle",
+    srcs: [
+        "types.hal",
+    ],
+    interfaces: [
+        "android.hardware.automotive.vehicle@2.0",
+        "android.hidl.base@1.0",
+    ],
+    gen_java: true,
+	
+	apex_available: [
+        "//apex_available:platform",
+        "com.android.car.framework",
+    ],
+}

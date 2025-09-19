@@ -1,0 +1,1266 @@
+package vendor.marelli.hardware.automotive.vehicle@1.0;
+
+import android.hardware.automotive.vehicle@2.0;
+
+/**
+ * Extension of VehicleProperty enum declared in Vehicle HAL 2.0
+ */
+enum VehiclePropertyCustom: android.hardware.automotive.vehicle@2.0::VehicleProperty {
+
+    /**
+     * Test prop
+     *
+     * @change_mode VehiclePropertyChangeMode:ON_CHANGE
+     * @access VehiclePropertyAccess:READ_WRITE
+     */
+    VENDOR_TEST = (
+      0x0001
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+    PASCD_SENTENCE = (
+      0x0F40
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+	  
+	BRIGHTNESS_VENDOR = (
+      0x0F41
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+	SPEED_VENDOR = (
+      0x0F42
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+    POWERMODE_VENDOR = (
+      0x0F43
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+    PARKLAMP_VENDOR = (
+      0x0F44
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+    IVISECURTIME_VENDOR = (
+      0x0F45
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+    BCMHMITIME_VENDOR = (
+      0x0F46
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  
+	DAYNIGHTMODE_VENDOR = (
+      0x0F47
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+	FUELTYPE_VENDOR = (
+      0x0F48
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+	FUELLEVAL_VENDOR = (
+      0x0F49
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+	PARKBREAKSTATUS_VENDOR = (
+      0x0F50
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+	OUTTEMP_VENDOR = (
+      0x0F51
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+	IVIPHONECALLSTATUS_VENDOR = (
+      0x0F52
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  	
+	BCMSECURTIME_VENDOR = (
+      0x0F53
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  
+	IVISMSSTATUS_VENDOR = (
+      0x0F54
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	
+      SIVIGNSS_VENDOR = (
+      0x0F55
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      
+      DOTTEPARAM_VENDOR = (
+      0x0F56
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      
+      HVBATTERYSOH_VENDOR = (
+      0x0F57
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+ 
+      HVBATTERYPERCENTAGE_VENDOR = (
+      0x0F58
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+ 
+      HVBATTERYMINCHARGE_VENDOR = (
+      0x0F59
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+ 
+      HVBATTERYISCHARGING_VENDOR = (
+      0x0F60
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+ 
+      HVBATTERYACTIVECONNECTOR_VENDOR = (
+      0x0F61
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+ 
+      HVBATTERYMAXRANGE_VENDOR = (
+      0x0F62
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+ 
+      HVBATTERYCHARGELEVEL_VENDOR = (
+      0x0F63
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  VINNUMBER_VENDOR = (
+      0x0F64
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  ANTITHEFT_VENDOR = (
+      0x0F65
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  INTERNALCANSIG_VENDOR = (
+      0x0F66
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  
+	  AUTONOMY_VENDOR = (
+      0x0F67
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      BRAKEPEDALRSTS_VENDOR = (                                 
+      0x0F68
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      CANDISTANCEUNIT_VENDOR = (                                 
+      0x0F69
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      INSTANTFUELCONS_VENDOR = (                                 
+      0x0F70
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+     
+      REVERSEGEARENGAGED_VENDOR = (                                 
+      0x0F71
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      ROADSLOPE_VENDOR = (                                 
+      0x0F72
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+   
+      STEERINGANGLE_VENDOR = (                                 
+      0x0F73
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      TOTALKM_VENDOR = (                                 
+      0x0F74
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      TRANSMGEARDISPLAY_VENDOR = (                                 
+      0x0F75
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      TRIPAVGBATTPOWERCONS_VENDOR = (                                 
+      0x0F76
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+	YAWSPEED_VENDOR = (                                 
+      0x0F77
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      GROSSYAWRATE_VENDOR = (                                 
+      0x0F78
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+	IVIHMITIME_VENDOR = (
+      0x0F79
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+       FLWHEELTICKCOUNTERFAULT_VENDOR = (
+      0x0F80
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      FRWHEELTICKCOUNTERFAULT_VENDOR = (
+      0x0F81
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      RLWHEELTICKCOUNTERFAULT_VENDOR = (
+      0x0F82
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      RRWHEELTICKCOUNTERFAULT_VENDOR = (
+      0x0F83
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      PULSECOUNTFLWHEEL_VENDOR = (
+      0x0F84
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      PULSECOUNTFRWHEEL_VENDOR = (
+      0x0F85
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      PULSECOUNTRLWHEEL_VENDOR = (
+      0x0F86
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      PULSECOUNTRRWHEEL_VENDOR = (
+      0x0F87
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      FPASSTS_VENDOR = (
+      0x0F88
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      DRIVINGDIRECTION_VENDOR = (
+      0x0F89
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      IGNITIONSTS_VENDOR = (
+      0x0F90
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      NODEHMITIME_VENDOR = (
+      0x0F91
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      NODESECURETIME_VENDOR = (
+      0x0F92
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      ECALLCRASH_VENDOR = (
+      0x0F93
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      DTCSIGNAL_VENDOR = (
+      0x0F94
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      DLTSIGNAL_VENDOR = (
+      0x0F95
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      IVIDLT_TRIGGER_VENDOR = (
+      0x0F96
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      IVILOGEXTRACTSIGNAL_VENDOR = (
+      0x0F97
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),     
+
+
+      CAPACITYUNIT_VENDOR = (
+      0x0F98
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      COMBUSTFUELLV_VENDOR = (
+      0x0F99
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      COMPRESSORSTS_VENDOR = (
+      0x0F9A
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      ELECTRICMOTORPOWER_VENDOR = (
+      0x0F9B
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      ENGINECOOLANTTEMP_VENDOR = (
+      0x0F9C
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      ENGINERPM_VENDOR = (
+      0x0F9D
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      FUELLEVELMINIMUMSTS_VENDOR = (
+      0x0F9E
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      ABSSTEERINGWHEELANGLEACU_VENDOR = (
+      0x0F9F
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+       
+      INITSTEERINGWHEENANGLE_VENDOR = (
+      0x0FA0
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      NETWORKMNGT_VENDOR = (
+      0x0FA1
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      FPASCENTERLEFTBARSTS_VENDOR = (
+      0x0FA2
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      FPASCENTERRIGHTBARSTS_VENDOR = (
+      0x0FA3
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      FPASLEFTBARSTS_VENDOR = (
+      0x0FA4
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      FPASRIGHTBARSTS_VENDOR = (
+      0x0FA5
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      RPASCENTERLEFTBARSTS_VENDOR = (
+      0x0FA6
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      RPASCENTERRIGHTBARSTS_VENDOR = (
+      0x0FA7
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      RPASLEFTBARSTS_VENDOR = (
+      0x0FA8
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      TRAILERPRESENT_VENDOR = (
+      0x0FA9
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      TRUNKDOORSTS_VENDOR = (
+      0x0FAA
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+      USBUPDATE_VENDOR = (
+      0x0FAB
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  
+      USBUPDATE_DETAILS_VENDOR = (
+      0x0FAC
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      RPASSTS_VENDOR = (
+      0x0FAD
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+     
+      ECONSHFTRQ_VENDOR = (
+      0x0FAE
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+     
+      ENGINETORQUE_VENDOR = (
+      0x0FAF
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      FUELCONSUNIT_VENDOR = (
+      0x0FB0
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      REGENERATEDENERGY_VENDOR = (
+      0x0FB1
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      SHIFTLEVERPOSITION_VENDOR = (
+      0x0FB2
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      TRIPAVERAGEFUELCONSUMPTION_VENDOR = (
+      0x0FB3
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      REQVOLCTRL_VENDOR = (
+      0x0FB4
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+    
+      DLT_VECTORVALUE_SIGNAL_VENDOR = (
+      0x0FB5
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      
+	  VEH_PRIVACYMODE_VENDOR = (
+      0x0FB6
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+      SIVIGNSSGSM_AVAILABILITY_STATUS_VENDOR = (
+      0x0FB7
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+	  EV_SIGNAL_SDK_VENDOR = (
+      0x0FB8
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  
+	  BCM_CAN_SDK__VENDOR = (
+      0x0FB9
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  
+	  BCM_SIGNALS_CAMERA_VENDOR = (
+      0x0FBA
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+	  CALIBRATION_DATA_VENDOR = (
+      0x0FBB
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      TEMPERATURE_MODE_VENDOR = (
+      0x0FBC
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  CALIBRATION_DATA_AUDIO_VENDOR = (
+      0x0FBD
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  CALIBRATION_DATA_CAMERA_VENDOR = (
+      0x0FBE
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),	  
+	  CALIBRATION_ARRAY_DATA_VENDOR = (
+      0x0FBF
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  
+	  DISPLAY_STATUS_VENDOR = (
+      0x0FC0
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      IVI_INTERNAL_CAMERA_VENDOR = (
+      0x0FC1
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      CAN_COMMON_VENDOR = (
+      0x0FC2
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      
+      IVI_BATTERY_PRECONDITION_VENDOR = (
+      0x0FC3
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      DOTTEPARAM_ARRAY_VENDOR = (
+      0x0FC4
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      IVI_EXTGPS_VENDOR = (
+      0x0FC5
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      IVI_INTERNAL_AUDIO_VENDOR = (
+      0x0FC6
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      
+      IVI_INTERNAL_HMI_VENDOR = (
+      0x0FC7
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      IVI_INTERNAL_CONNECTIVITY_VENDOR = (
+      0x0FC8
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      IVI_INTERNAL_PROJECTION_VENDOR = (
+      0x0FC9
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      IVI_INTERNAL_SECOND_PARTY_APP_VENDOR = (
+      0x0FD0
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      IVI_INTERNAL_NAVIGATION_VENDOR = (
+      0x0FD1
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      STYSTEM_TIME_STAMP_VENDOR = (
+      0x0FD2
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  
+	TCU_SIGNALS_VENDOR = (
+      0x0FD3
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      IVI_STR_STATUS_VENDOR = (
+      0x0FD4
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+       
+      SATELLITES_NUMBER_VENDOR = (
+      0x0FD5
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      LATITUDE_DATA_VENDOR = (
+      0x0FD6
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:FLOAT
+      | VehicleArea:GLOBAL),
+ 
+      LONGITUDE_DATA_VENDOR = (
+      0x0FD7
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:FLOAT
+      | VehicleArea:GLOBAL),
+ 
+      CURRENT_ELEVATION_DATA_VENDOR = (
+      0x0FD8
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:FLOAT
+      | VehicleArea:GLOBAL),
+ 
+      MAP_VERSION_DATA_VENDOR = (
+      0x0FD9
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+      
+	IMU_DATA_VENDOR = (
+      0x0FDA
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	
+	DID_RID_DATA_VENDOR = (
+      0x0FDB
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  
+	IVI_HMI_DATA_VENDOR = (
+      0x0FDC
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+	HMI_XCALL_DATA_VENDOR = (
+      0x0FDD
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+	HMI_SOFTKEY_VENDOR = (
+      0x0FDE
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      INTERNAL_SYSTEM_TIME_VENDOR = (
+      0x0FDF
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL), 	  
+
+      CAN_IVI_TX_SIGNAL_VENDOR = (
+      0x0FE0
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      IVI_RESET_USB_VENDOR = (
+      0x0FE1
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      INTERNAL_ACTIVE_PROJECTION_VENDOR = (
+      0x0FE2
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      DIAG_DTC_VENDOR = (
+      0x0FE3
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+	DRIVERDOORSTATUS_VENDOR = (
+      0x0FE4
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+	PASSENGERDOORSTATUS_VENDOR = (
+      0x0FE5
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      DISPLAY_SCREEN_STATUS_VENDOR = (
+      0x0FE6
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      IVI_USER_SETTING_DATA_VENDOR = (
+      0x0FE7
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+ 
+      CAN_RX_SIGNALS_VENDOR = (
+      0x0FE8
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      CALL_ACTIVE_STR_DISPLAY_POPUP_VENDOR = (
+      0x0FE9
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      CALL_ACTIVE_STR_INPUT_FROM_POPUP_VENDOR = (
+      0x0FEA
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      IVI_USER_XCALL_INPUT_VENDOR= (
+      0x0FEB
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      SIGNED_CAN_RX_SIGNALS_VENDOR= (
+      0x0FEC
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      LOG_RETRIVER_STATUS_VENDOR= (
+      0x0FED
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT64_VEC
+      | VehicleArea:GLOBAL),
+
+      SLI_DATA_VENDOR= (
+      0x0FEE
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      STR_CANCEL_SHUTDOWN_VENDOR = (
+      0x0FEF
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      LOG_RETRIVER_ACK_VENDOR = (
+      0x0FF0
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      FAN_SPEED_DATA_VENDOR = (
+      0x0FF1
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      LOGFILEPATH_TCU_VENDOR = (
+      0x0FF2
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      LOGFILEPATH_HMI_VENDOR = (
+      0x0FF3
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      LOGRETRIEVER_STATUS_VENDOR = (
+      0x0FF4
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      POI_DATABASE_VERSION_VENDOR = (
+      0x0FF5
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      LASTUPDATE_TIME_VENDOR = (
+      0x0FF6
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      IVI_RESET_DATA_VENDOR = (
+      0x0FF7
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      SOC_WAKEUP_REASON_VENDOR = (
+      0x0FF8
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      XCALL_HMI_CONTROL_VENDOR = (
+      0x0FF9
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      IVI_DRIVER_LOCKOUTSTS_VENDOR = (
+      0x0FFA
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      BOARD_PART_NUMBER_VENDOR= (
+      0x0FFB
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      SUPPLY_VOLTAGE_VENDOR = (
+      0x0FFC
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      ISP_CAMERA_VENDOR = (
+      0x0FFD
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      INTERNAL_SYSTEM_TIME_ZONE = (
+      0x0FFE
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+
+      HMIFOTA_CHECK_FOR_UPDATES = (
+      0x0FFF
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      FOTAHMI_CHECK_FOR_UPDATES_RESULT = (
+      0x1000
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      FLASH_UNITID_VENDOR = (
+      0x1001
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      FLASH_RESULT_VENDOR = (
+      0x1002
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      
+      PACKAGE_PATH_VENDOR = (
+      0x1003
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+      
+      CAN_RX_FLOAT_VENDOR = (
+      0x1004
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:FLOAT_VEC
+      | VehicleArea:GLOBAL),
+
+      CAM_MYVEHICLE_MUTE_VENDOR = (
+      0x1005
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  
+	  EOL_MARELLI_PN_VENDOR = (
+      0x1006
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+      EOL_VARIANT_ID_VENDOR = (
+      0x1007
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      
+	HMIFOTA_UPDATEHISTORY_VENDOR = (
+      0x1008
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+	  
+	HMIFOTA_PENDINGUPDATES_VENDOR = (
+      0x1009
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+      AUDIO_ADAS_VENDOR = (
+      0x100A
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      HMIFOTA_WHATSNEWDETAILS_VENDOR = (
+      0x100B
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+       UIN_TCU_VENDOR = (
+      0x100C
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),	
+      PASSENGER_CONFIRM_STS_VENDOR= (
+      0x100D
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  HMI_PRIVACYMODE_CHANGEREQ_VENDOR= (
+      0x100E
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  HMI_LANGUAGE_CHANGEREQ_VENDOR= (
+      0x100F
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  CANRX_INT64DATA_VENDOR= (
+      0x1010
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT64_VEC
+      | VehicleArea:GLOBAL),
+	  FOTAHMI_UPDATE_AVAILABLE = (
+      0x1011
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+	  FOTAHMI_CONDITIONS_NOT_MET = (
+      0x1012
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+	  HMIFOTA_START_INSTALLATION = (
+      0x1013
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+	  FOTAHMI_INSTALLATION_STATUS= (
+      0x1014
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),	  
+	  HMIFOTA_INSTALLATION_FINISHED_WITH_USER_CONFIRMATION= (
+      0x1015
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+	  FOTAHMI_UPDATE_FINISHED= (
+      0x1016
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+	  HMIFOTA_SHEDULE_UPDATE= (
+      0x1017
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+	  FOTAHMI_SHEDULE_UPDATE_RESPONSE= (
+      0x1018
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+  	  HMIFOTA_UPDATE_DISMISSED= (
+      0x1019
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      FOTAHMI_WHATSNEWDETAILS_RESPONSE= (
+      0x101A
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      FOTAHMI_UPDATEHISTORY_RESPONSE= (
+      0x101B
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+
+      FOTAHMI_PENDINGUPDATES_RESPONSE= (
+      0x101C
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+      HMITRIGGERFOR_UIN_VENDOR= (
+      0x101D
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	IVITHEME_VENDOR= (
+      0x101E
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+   	TCUVERSION_HMISHOW_VENDOR= (
+      0x101F
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+      FACTORY_RESET_COUNT= (
+      0x1020
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      CALDATA_SRECFILE_VENDOR= (
+      0x1021
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      AOSP_RBUA_TRIGGER_VENDOR = (
+      0x1022
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+      AOSP_FLASH_RESULT_VENDOR = (
+      0x1023
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+      GPSHISTOGRAPH_DISTELEC_VENDOR = (
+      0x1024
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      CGTRTABTYPERECHARGE_VENDOR = (
+      0x1025
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      CGTRTABRECHARGE_HDEBUT_VENDOR = (
+      0x1026
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      TEMPORTAB_RECHARGE_VENDOR = (
+      0x1027
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      VEHGEARCONFIG_VENDOR = (
+      0x1028
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      VEHGEAR_INT_VENDOR = (
+      0x1029
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      VEHGEARPOS_INT_VENDOR = (
+      0x102A
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      REVERSEGEARSTS_VENDOR = (
+      0x102B
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      MANUALPARKBREAKSTS_VENDOR = (
+      0x102C
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      PARKBREAKSTSEST_VENDOR = (
+      0x102D
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  HMI_STATUS_SWUPDATE_VENDOR = (
+      0x102E
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      ANDROID_RVCSTATUS_VENDOR = (
+      0x102F
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      HMIFOTA_INFO_VENDOR = (
+      0x1030
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+      FOTAHMI_INFO_RESULT_VENDOR = (
+      0x1031
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:STRING
+      | VehicleArea:GLOBAL),
+      GNSSSIGNALSTRENGTH_VENDOR = (
+      0x1032
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	  AUTHENTICATION_ZONE_VENDOR = (
+      0x1033
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  APPLICATION_SW_INDENTIFICATION_VENDOR = (
+      0x1034
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  
+	  APPLICATION_DATA_INDENTIFICATION_VENDOR = (
+      0x1035
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  DATA_LIBRARY_IDENTIFIER_VENDOR = (
+      0x1036
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+	  VEHICLE_APPS_IDENTIFIER_VENDOR = (
+      0x1037
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      OTAAUTH_INSTALL_VENDOR = (
+      0x1038
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+	USBATTACHED_STATUS_VENDOR = (
+      0x1039
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32
+      | VehicleArea:GLOBAL),
+      HMIUSBUPDATE_USERCONSENT_VENDOR  = (
+      0x103A
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+      IMCMCU_USBUPDATE_VENDOR = (
+      0x103B
+      | VehiclePropertyGroup:VENDOR
+      | VehiclePropertyType:INT32_VEC
+      | VehicleArea:GLOBAL),
+
+
+};

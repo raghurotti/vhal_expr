@@ -1,0 +1,326 @@
+/* from: GenFIDLFiles Vers: 3.1.2 on 06th July 2021 */
+/* gen_version: Project=R2EX_Generator=5.2.2_Config=0.13_build=2024/07/22_11:18:59 */
+
+package VHAL
+
+interface VHAL_LIFECYCLE
+{
+    version {major 0 minor 1}
+
+    /* Commentary : message used to update IVI ack */
+    method ecallStatus_ack {
+        in {UInt8 conf}
+    }
+ 
+    <** @description : ecall status for IVI **>
+    attribute UInt8 ecallStatus readonly
+	
+	
+        /* Commentary : message used to Receive_MsdTransmissionTime_TCU */
+    method Receive_MsdTransmissionTime_TCU {
+        in {UInt32 conf}
+    }
+
+    method Receive_EcallState_TCU {
+        in {UInt32 conf}
+    }
+
+    method Receive_AcallState_TCU{
+        in {UInt32 conf}
+    }
+
+    method Receive_UserXcallFeedback_TCU{
+           in {UInt32 conf}
+    }
+
+    method Receive_EcallDurationTimer_TCU{
+        in {UInt32 conf}
+    }
+
+    method Receive_EcallTpsState_TCU{
+        in {UInt32 conf}
+    }
+
+    method Receive_XcallStatus_TCU{
+        in {UInt32 conf}
+    }
+
+    method Receive_EcallWcbTimer_TCU{
+        in {UInt32 conf}
+    }
+
+        method Receive_DmdMuteSual {
+		in {UInt32 conf}	
+	}
+
+    method Receive_AppUrgMds {
+	    in {UInt32 conf}	
+	
+	}
+
+    method Receive_SignalVoyantDysfunction {
+        in {UInt32 conf}
+    }
+
+    method Receive_SignalVoyantEtat {
+        in {UInt32 conf}
+    }
+
+    method Receive_BoostrapRetryCount {
+	in {UInt32 conf}
+    }
+
+    method Receive_CloudConnectionStatus_CConnState_connectionGateID{
+		in {UInt32 conf}
+	}
+
+    method Receive_CloudConnectionStatus_CConnState_isConnected{
+		in {UInt32 conf}
+	}
+
+    method Receive_CloudConnectionStatus_CConnState_connType{
+		in {UInt32 conf}
+	}
+
+    method Receive_CloudConnectionStatus_CConnState_isRoaming{
+		in {UInt32 conf}
+	}
+	
+    method Receive_CloudConnectionStatus_CConnState_sigStrength{
+		in {UInt32 conf}
+	}
+
+    method Receive_CloudConnectionStatus_CConnState_ipVersion{
+		in {UInt32 conf}
+	}
+
+    method Receive_CellularNetworkType{
+		in {UInt32 conf}
+	}
+
+    method Receive_NetConnection{
+		in {UInt32 conf}
+	}
+
+    method Receive_Cellsignal{
+		in {UInt32 conf}
+	}
+
+    method Receive_CloudConnectionStatus_CConnCtrl_reqDisable{
+		in {UInt32 conf}
+	}
+
+    broadcast send_UserXCallInput_TCU {
+        out {UInt32 conf}
+    }
+
+    broadcast send_Language_selection {
+        out {UInt32 conf}
+    }
+
+    method getLanguageSelectionOnBootup {
+		out {UInt32 language}
+	}
+
+    attribute UInt32 Privacy_Mode readonly
+
+    method Receive_SLIRoadType{
+		in {UInt32 conf}
+	}
+ 
+    method Receive_SLISpeedLimit{
+		in {UInt32 conf}
+	}
+ 
+    method Receive_SLICountryCode{
+		in {UInt32 conf}
+	}
+
+    method Flash_Unitid{
+		in {UInt32 conf}
+	}
+
+    attribute UInt32 Flash_Result readonly
+
+    method Package_Path{
+		in {String conf}
+	} 
+
+    /**
+	 * Send the IdsRegister Application details received from Sensors to SOC SomeIP Server.
+	**/
+	method sIdsRegisterApp {
+		in {
+            String appId
+            String appName
+        }
+        out {
+            String status
+        }		
+	}
+ 
+    /**
+	 * Send the IdsUnRegister Application details received from Sensors to SOC SomeIP Server.
+	**/
+    method sIdsUnRegisterApp {
+        out {
+            String status
+        }
+    }
+ 
+    method sIdsWriteSev {
+        in {
+            sIdsFramework_Types.sStSecurityEvent sevEvent
+            sIdsFramework_Types.sStLogIssuer issuer1
+            sIdsFramework_Types.sStEventSrc issuer2
+            sIdsFramework_Types.sStAction issuer3
+        }
+        out {
+            String status
+        }
+ 
+    }
+	
+    attribute UInt32 XCallHmiControl readonly
+    
+    attribute String HMI_FOTA_Update_history readonly
+
+    attribute String HMI_FOTA_pending_updates readonly
+
+    method ReceiveFOTA_Check_for_Updates_Result{
+        in {String conf}
+    }
+
+    method ReceiveFOTA_Update_Available{
+        in {String conf}
+    }
+
+    method ReceiveFOTA_Conditions_not_Met{
+        in {String conf}
+    }
+
+    method ReceiveFOTA_Installation_Status{
+        in {String conf}
+    }
+
+    method ReceiveFOTA_Update_Finished{
+        in {String conf}
+    }
+
+    method ReceiveFOTASchedule_Update_Response{
+        in {String conf}
+    }
+
+    method ReceiveFOTAWhatsNew_Details_Response{
+        in {String conf}
+    }
+
+    method ReceiveFOTAUpdate_History_Response{
+        in {String conf}
+    }
+
+    method ReceiveFOTAPending_Updates_Response{
+        in {String conf}
+    }
+
+
+    attribute String FOTA_Installation_Finished_with_User_Conformation readonly
+
+    attribute String FOTA_Start_Installation readonly
+
+    attribute String FOTA_Check_for_Updates readonly
+    
+    attribute String FOTA_Update_Dismissed readonly
+
+    attribute String FOTA_Schedule_Update readonly 
+
+    attribute String FOTA_WhatsNew_Details readonly
+
+    attribute UInt32 active_phone_call readonly
+
+    attribute UInt32 SIVIDriverLockoutSts readonly
+
+    method Receive_UIN_TCU {
+        in {String conf}
+    }
+
+    attribute Boolean UIN_Trigger_from_HMI readonly 
+
+    attribute UInt32 BTCallHMI_Status readonly
+
+    attribute UInt32 BTDeviceAttached_Status readonly
+
+    attribute UInt32 BTTransferTime_Duration readonly 
+
+    method ReceiveTCU_Version_Number {
+        in {String conf}
+    }
+
+    method ReceiveAOSP_RBUA_Trigger {
+        in {String conf}
+    }
+    attribute String AOSP_Flash_Result readonly
+    
+    method sIdsExportSecurityEvents {
+    	out {
+        	String status
+      	}
+    }
+    method sIdsSetVehiclePhase {
+    	in {
+            	String vehiclePhase
+        }
+        out {
+            	String status
+        }		
+    }
+    
+    attribute UInt32 HMI_Status_SWUpdate readonly
+
+    attribute UInt32 IncomingPhoneCall readonly
+
+    attribute UInt32 OutgoingPhoneCall readonly
+
+    attribute UInt32 BtTransferAcceptance readonly
+
+    attribute String HMIFOTA_Info readonly
+
+    method FOTAHMI_Info_Result {
+        in {String conf}
+    }
+
+    method USBUpdate_Details {
+        in {String conf}
+    }
+} 
+ 
+typeCollection sIdsFramework_Types {
+ 
+    struct sStSecurityEvent {
+        UInt16 SevCode
+        String SevText
+        UInt8 SevGravity
+    }
+ 
+    struct sStLogIssuer {
+        String sysName
+        String appName
+        String procName
+    }
+ 
+    struct sStEventSrc {
+        String sysName
+        String appName
+        String procName
+        String srcIP
+        String destIP
+    }
+ 
+    struct sStAction {
+        UInt16 ActCode
+        String ActText
+    }
+ 
+}
+
+
