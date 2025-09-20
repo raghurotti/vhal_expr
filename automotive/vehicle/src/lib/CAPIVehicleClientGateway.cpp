@@ -8068,6 +8068,7 @@ CAPIVehicleClientGateway::~CAPIVehicleClientGateway() {
 
 class CAPIVehicleTCUServerGateway::VehicleClientImpl {
     public:
+        explicit VehicleClientImpl(CAPIVehicleTCUServerGateway& owner) : owner_(owner) {}
         void initialize_TCU() {
 
             /**
@@ -8088,6 +8089,7 @@ class CAPIVehicleTCUServerGateway::VehicleClientImpl {
             *Create and store the stub service
             */
             tcuStubService = std::make_shared<tcuStubImpl>();
+            tcuStubService->setGateway(&owner_);
     
             while (!runtime_tcu->registerService(tcu_domain, tcu_instance, tcuStubService, tcu_connection)) {
                 LOG(INFO) << "Register Service failed, trying again in 100 milliseconds...\n";
@@ -8589,6 +8591,7 @@ class CAPIVehicleTCUServerGateway::VehicleClientImpl {
         private:
             std::shared_ptr<CommonAPI::Runtime> runtime_tcu;
             std::shared_ptr<tcuStubImpl> tcuStubService;
+            CAPIVehicleTCUServerGateway& owner_;
             std::function<void(uint32_t[])> TCU_internalSignalCallback;
             std::function<void(uint32_t[])> SLI_DataCallback;
             std::function<void(uint32_t)> Flash_UnitIdCallback;
@@ -8611,7 +8614,7 @@ class CAPIVehicleTCUServerGateway::VehicleClientImpl {
 
         };
     
-  CAPIVehicleTCUServerGateway::CAPIVehicleTCUServerGateway(): m_pImpl_TCU{std::make_unique<VehicleClientImpl>()} {}
+  CAPIVehicleTCUServerGateway::CAPIVehicleTCUServerGateway(): m_pImpl_TCU{std::make_unique<VehicleClientImpl>(*this)} {}
 
   CAPIVehicleTCUServerGateway::~CAPIVehicleTCUServerGateway() {
   };

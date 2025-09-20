@@ -19,6 +19,7 @@ class tcuStubImpl: public v0_1::VHAL::VHAL_LIFECYCLEStubDefault {
     public:
         tcuStubImpl();
         virtual ~tcuStubImpl();
+        void setGateway(android::hardware::automotive::vehicle::V2_0::CAPIVehicleTCUServerGateway* gateway);
         void Receive_MsdTransmissionTime_TCU(const std::shared_ptr<CommonAPI::ClientId> _client, uint32_t _MsdTransmissionTime_TCU, Receive_MsdTransmissionTime_TCUReply_t _reply);
         void Receive_EcallState_TCU(const std::shared_ptr<CommonAPI::ClientId> _client, uint32_t _EcallState_TCU, Receive_EcallState_TCUReply_t _reply);
         void Receive_AcallState_TCU(const std::shared_ptr<CommonAPI::ClientId> _client, uint32_t _AcallState_TCU, Receive_AcallState_TCUReply_t _reply);
@@ -71,7 +72,10 @@ class tcuStubImpl: public v0_1::VHAL::VHAL_LIFECYCLEStubDefault {
         void FOTAHMI_Info_Result(const std::shared_ptr<CommonAPI::ClientId> _client, std::string FOTAHMI_InfoResult, FOTAHMI_Info_ResultReply_t _reply);
         void USBUpdate_Details(const std::shared_ptr<CommonAPI::ClientId> _client, std::string USBUpdate_details, USBUpdate_DetailsReply_t _reply);
 
-	  std::shared_ptr<android::hardware::automotive::vehicle::V2_0::CAPIVehicleTCUServerGateway> m_pImpl_TCU = std::make_shared<android::hardware::automotive::vehicle::V2_0::CAPIVehicleTCUServerGateway>(); 
+          android::hardware::automotive::vehicle::V2_0::CAPIVehicleTCUServerGateway* m_gateway_TCU = nullptr;
+
+    private:
+        android::hardware::automotive::vehicle::V2_0::CAPIVehicleTCUServerGateway& getGateway() const;
 };
 
 #endif // TCU
